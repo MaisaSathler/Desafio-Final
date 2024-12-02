@@ -31,9 +31,10 @@ header{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-size: 20px;
         a{
             color: white;
-            font-size: 20px;
+            
 
         }
     }
@@ -62,13 +63,24 @@ header{
     }
 }
 
+
+
+
+
+// -----------------------RESPONSIVO-----------------------
+
+
+
+
+
+
 @media(max-width:1170px){
    
     .boxLogo{
-        border: solid 2px red;
+        // border: solid 2px red;
         width: 28vw;
         h1{
-            font-size:2vw ;
+            font-size:2.2vw ;
         }
         img{
             width: 5vw;
@@ -77,9 +89,48 @@ header{
     .boxInput{
         input{
             &::placeholder{
-                font-size:1vw ;
+                font-size:1.1vw ;
             }
         }
        
+    }
+    .boxMenu{
+        // border: solid 2px green;
+        ul{
+        
+                font-size: 1.7vw;
+        
+            
+        }
+    }
+}
+
+@media (max-width:780px){
+    header{
+        flex-direction: column;
+        height:30vh ;
+        justify-content: space-around;
+    }
+    .boxInput{
+        display: none;
+    }
+    .boxMenu{
+        width: 100%;
+        ul{
+        
+               justify-content: space-evenly;
+               font-size: 18px;
+        
+            
+        }
+    }
+    .boxLogo{
+        width: 80%;
+        h1{
+            font-size: 25px;
+        }
+        img{
+            width: 7vw;
+        }
     }
 }
