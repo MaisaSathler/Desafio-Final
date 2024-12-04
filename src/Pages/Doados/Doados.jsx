@@ -1,6 +1,6 @@
 import S from "./doados.module.scss"
 import protagonista from "../../assets/protagonista.png"
-   
+import mobyDick from "../../assets/mobyDick.jpg"
    
    
    
@@ -17,6 +17,13 @@ import protagonista from "../../assets/protagonista.png"
                 <p>Susanne Andrade</p>
                 <p>Ficção</p>
             </article>
+            <article>
+                <img src={mobyDick} alt="" />
+                <h3>Moby Dick</h3>
+                <p>Herman Melville</p>
+                <p>Romance</p>
+            </article>
+            
         </section>
         </section>
         

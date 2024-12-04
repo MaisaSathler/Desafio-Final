@@ -13,6 +13,8 @@
     // border: solid 2px rgb(0, 255, 89);
     width: 85vw;
     height: 65vh;
+    display: flex;
+    justify-content: space-evenly;
     article{
         border: solid 2px #005695;
         width: 18vw;
@@ -24,3 +26,45 @@
         border-radius: 15px;
     }
 }
+
+
+
+
+
+
+
+// ---------------RESPONSIVO-------------
+
+
+
+@media(max-width:1000px){
+    .boxDoados{
+        // border: solid 2px red;
+        justify-content: space-around;
+    }
+    .boxBooks{
+        // border: solid 2px green;
+        article{
+            width: 200px;
+            height: 230px;
+        }
+    }
+}
+
+
+@media(max-width:520px){
+    .boxBooks{
+        flex-wrap: wrap;
+        gap:20px;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .boxDoados{
+        height: auto;
+        padding-bottom: 25px;
+        margin-top: 20px;
+        
+    }
+}
+
