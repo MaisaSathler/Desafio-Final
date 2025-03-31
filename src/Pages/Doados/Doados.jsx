@@ -1,10 +1,24 @@
 import S from "./doados.module.scss"
 import protagonista from "../../assets/protagonista.png"
-import mobyDick from "../../assets/mobyDick.jpg"
+import axios from 'axios'
+import { useState, useEffect } from "react"
    
    
    
-   export default function Doados(){
+export default function Doados(){
+
+     const [livros, setLivros] = useState([])
+
+     const getLivros = async () =>{
+        const response = await axios.get("https://api-livros-2xeo.onrender.com/livros")
+        setLivros(response.data)
+     }
+     
+     useEffect(()=>{
+        getLivros()
+     },[])
+
+
     return(
         
         <section className={S.boxDoados}>
@@ -12,21 +26,23 @@ import mobyDick from "../../assets/mobyDick.jpg"
         
         <section className={S.boxBooks}>
             <article>
-                <img src={protagonista} alt="" />
-                <h3>O protagonista</h3>
+                <img src={protagonista} alt="imagem do livro O protagonista" />
+                <h3>O Protagonista</h3>
                 <p>Susanne Andrade</p>
                 <p>Ficção</p>
             </article>
-            <article>
-                <img src={mobyDick} alt="" />
-                <h3>Moby Dick</h3>
-                <p>Herman Melville</p>
-                <p>Romance</p>
-            </article>
+            {livros.map((item)=>(
+                <article key={item.id}>
+                    <img src={item.imagem_url} alt="" />
+                    <h3>{item.titulo}</h3>
+                    <p>{item.categoria}</p>
+                    <p>{item.autor}</p>
+                </article>
+            ))}
             
         </section>
         </section>
         
         
     )
-   }
+}
