@@ -2,19 +2,28 @@
 
 .boxDoados{
     // border: solid 2px red;
-    height: 80vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    
+    h2{
+        
+        height: 100px;
+        display: flex;
+        align-items: center;
+    }
 }
 
 .boxBooks{
     // border: solid 2px rgb(0, 255, 89);
     width: 85vw;
-    height: 65vh;
+   min-height: 60vh;
     display: flex;
     justify-content: space-evenly;
+   
+    flex-wrap: wrap;
     article{
         border: solid 2px #005695;
         width: 18vw;
